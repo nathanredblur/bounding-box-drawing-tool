@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir,
+    "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial,
+    sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #1a202c;
+  caret-color: #1a202c;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: white;
+    background-color: #272727;
+    caret-color: white;
+  }
+}
