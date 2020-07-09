@@ -1,0 +1,17 @@
+
+.Button {
+  background: #332A7C;
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 10px;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.2s;
+  &:hover {
+    transform: scale(1.1);
+  }
+  &.Disable {
+    cursor: default;
+    background-color: #ccc;
+  }
+}

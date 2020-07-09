@@ -1,0 +1,13 @@
+.Layout {
+  background: #E0E6EB;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 60px auto;
+  grid-template-areas: 
+    "toolbar preview"
+    "main preview";
+}

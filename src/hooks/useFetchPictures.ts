@@ -1,16 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-type BoundingBox = {
-  x: number;
-  y: number;
-};
+export type BoundingBox = {
+  top: number;
+  left: number;
+  width: number;
+  height: number;
+  borderColor?: string;
+}
 
-type PictureTarget = {
+export type PictureTarget = {
   img: string;
-  boundingBoxes: BoundingBox[];
+  boundingBoxes?: BoundingBox[];
 };
 
-const API = "api/pictures";
+const API = "http://localhost:3000/api/pictures";
 
 const request = async () => {
   try {
@@ -27,14 +30,18 @@ const submitPictureTargets = (data: PictureTarget[]) => {
   console.log(data);
 };
 
+const pictureParser = (pictures: string[]) => pictures.map<PictureTarget>((img) => ({img}))
+
 export const useFetchPictures = () => {
   const [loading, setLoading] = useState(true);
-  const [pictures, setPictures] = useState([]);
+  const [pictures, setPictures] = useState<PictureTarget[]>([]);
 
-  request().then(data => {
-    setLoading(false);
-    setPictures(data);
-  });
+  useEffect(()=>{
+    request().then(data => {
+      setLoading(false);
+      setPictures(pictureParser(data));
+    });
+  }, [])
 
   return {
     loading,

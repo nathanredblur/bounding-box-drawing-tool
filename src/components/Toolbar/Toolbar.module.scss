@@ -1,4 +1,14 @@
 
 .Toolbar {
-  background: #000;
+  // background: #332A7C;
+  grid-area: toolbar;
+  border-radius: 20px;
+  margin: 10px;
+  > a {
+    margin-right: 10px;
+  }
+  .Submit {
+    float: right;
+    background-color: #64A91B;
+  }
 }
