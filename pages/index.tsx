@@ -80,7 +80,7 @@ const reducer = (state: State, action: Action) => {
 
   if (action.type == 'undo') {
     const actionToUndo = actions[currentAction]
-    if (actionToUndo.type === 'addBoundingBox') {
+    if (actionToUndo?.type === 'addBoundingBox') {
       return({
         ...state,
         selectedPicture: actionToUndo.payload.id,
@@ -92,7 +92,7 @@ const reducer = (state: State, action: Action) => {
 
   if (action.type == 'redo') {
     const actionToRedo = actions[currentAction+1]
-    if (actionToRedo.type === 'addBoundingBox') {
+    if (actionToRedo?.type === 'addBoundingBox') {
       return({
         ...state,
         selectedPicture: actionToRedo.payload.id,

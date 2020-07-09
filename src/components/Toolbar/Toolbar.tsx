@@ -18,7 +18,7 @@ export const Toolbar: FC<Props> = ({
   totalActions,
 }) => {
   return <div className={styles.Toolbar}>
-    <Button onClick={onUndo} disable={totalActions == 0}>Undo</Button>
+    <Button onClick={onUndo} disable={totalActions == 0 || currentAction < 0}>Undo</Button>
     <Button onClick={onRedo} disable={currentAction == totalActions-1}>Redo</Button>
     <Button className={styles.Submit} onClick={onSubmit}>Submit</Button>
   </div>;
